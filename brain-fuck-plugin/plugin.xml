@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension id="shortcuts"
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+         id="net.progsign.eclipse.plugin.brainfuck.bfLaunchShortcut"
+         class="net.progsign.eclipse.plugin.brainfuck.BFLaunchShortcut"
+         label="Brainfuck Application"
+         icon="icons/bf_app.gif"
+         modes="run">
+         <contextualLaunch>
+            <enablement>
+               <with variable="selection">
+                  <count value="1"/>
+                  <iterate>
+                     <or>
+                        <test property="org.eclipse.debug.ui.matchesPattern" value="*.bf"/>
+                        <test property="org.eclipse.debug.ui.matchesPattern" value="*.b"/>
+                     </or>
+                  </iterate>
+               </with>
+            </enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension>
+   
+   <!--
+   <extension id="contentTypes"
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+         id="net.progsign.eclipse.plugin.brainfuck.bfContentType"
+         name="Brainfuck file"
+         base-type="org.eclipse.core.runtime.text"
+         file-extensions="b,bf">
+      </content-type>
+   </extension>
+   <extension id="editors"
+         point="org.eclipse.ui.editors">
+         <editor
+            id="net.progsign.eclipse.plugin.brainfuck.bfDefaultEditor"
+            icon="icons/bfcu_obj.gif"
+            extensions="b,bf"
+            default="true"
+            name="Brainfuck Editor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="org.eclipse.ui.editors.text.TextEditor">
+            <contentTypeBinding contentTypeId="net.progsign.eclipse.plugin.brainfuck.bfContentType"/>
+         </editor>
+   </extension-->
+   
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+         <launchConfigurationType
+         	id="net.progsign.eclipse.plugin.brainfuck.bfLaunchConfiguration"
+         	name="Brainfuck Application"
+         	delegate="net.progsign.eclipse.plugin.brainfuck.BFLaunchConfigurationDelegate"
+         	modes="run">
+         </launchConfigurationType>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+         <launchConfigurationTypeImage
+         	id="net.progsign.eclipse.plugin.brainfuck.bfLaunchConfigurationIcon"
+         	configTypeID="net.progsign.eclipse.plugin.brainfuck.bfLaunchConfiguration"
+         	icon="icons/bf_app.gif">
+         </launchConfigurationTypeImage>
+   </extension>
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+         <launchConfigurationTabGroup
+         	id="net.progsign.eclipse.plugin.brainfuck.bfTabGroup"
+         	type="net.progsign.eclipse.plugin.brainfuck.bfLaunchConfiguration"
+         	class="net.progsign.eclipse.plugin.brainfuck.BFTabGroup">
+         </launchConfigurationTabGroup>
+   </extension>
+</plugin>

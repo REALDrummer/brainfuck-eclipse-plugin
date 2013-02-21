@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: net.progsign.brainfuck;singleton:=true
+Bundle-Version: 1.0.0.vqualifier
+Bundle-Activator: net.progsign.eclipse.plugin.brainfuck.BFPluginActivator
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %pluginVendor
+Require-Bundle: org.eclipse.core.runtime, org.eclipse.debug.core, org.eclipse.debug.ui, org.eclipse.ui, org.eclipse.ui.console, org.eclipse.ui.ide, org.eclipse.jdt.ui
+Import-Package: org.eclipse.jdt.core, org.eclipse.jdt.launching, org.eclipse.ui.editors.text, org.eclipse.ui.texteditor, org.eclipse.ui.ide, org.eclipse.pde.ui.launcher
