@@ -1,0 +1,1 @@
+The plug-in includes an editor with syntax highlighting and errors marking. Recognizes .b & .bf files as Brainfuck source code. Additionally, it contributes to Eclipse UI by adding "Run configuration" and "Run Shortcut" to the workbench.
